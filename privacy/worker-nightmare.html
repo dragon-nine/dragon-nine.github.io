@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>직장인 잔혹사 - 개인정보 처리방침</title>
+  <title>Worker Nightmare: Commute - Privacy Policy / 개인정보 처리방침</title>
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.8; }
     h1 { font-size: 24px; border-bottom: 2px solid #e94560; padding-bottom: 10px; }
@@ -12,69 +12,185 @@
     ul { padding-left: 20px; }
     .date { color: #888; font-size: 13px; }
     .contact { background: #f8f8f8; padding: 16px; border-radius: 8px; margin-top: 20px; }
+    .lang-switch { text-align: right; margin-bottom: 10px; }
+    .lang-switch button {
+      background: none; border: 1px solid #ccc; border-radius: 6px;
+      padding: 6px 14px; cursor: pointer; font-size: 14px; color: #555;
+      margin-left: 4px;
+    }
+    .lang-switch button.active {
+      background: #e94560; color: #fff; border-color: #e94560;
+    }
+    .section { display: none; }
+    .section.visible { display: block; }
   </style>
 </head>
 <body>
-  <h1>직장인 잔혹사 — 개인정보 처리방침</h1>
-  <p class="date">시행일: 2026년 3월 15일 | 최종 수정일: 2026년 3월 15일</p>
 
-  <p>DragonNine Studio(이하 "회사")는 「직장인 잔혹사」(이하 "게임") 이용자의 개인정보를 중요하게 여기며, 개인정보 보호법 및 관련 법령을 준수합니다. 본 방침은 게임에서 어떤 정보를 수집·이용·보관하는지 안내합니다.</p>
+<div class="lang-switch">
+  <button id="btn-en" onclick="switchLang('en')">English</button>
+  <button id="btn-ko" onclick="switchLang('ko')">한국어</button>
+</div>
+
+<!-- ==================== ENGLISH ==================== -->
+<div class="section" id="en"></div>
+
+<!-- ==================== 한국어 ==================== -->
+<div class="section" id="ko"></div>
+
+<script>
+  // ── 변수: 여기만 수정하면 전체 반영 ──
+  const CONFIG = {
+    companyEn: 'DragonNine',
+    companyKo: '드래곤나인',
+    gameEn: 'Worker Nightmare: Commute',
+    gameKo: '직장인 잔혹사: 출근편',
+    email: 'dragonnine109@gmail.com',
+    effectiveDate: '2026-03-17',
+  };
+
+  const dateEn = new Date(CONFIG.effectiveDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  const dateKo = CONFIG.effectiveDate.replace(/(\d{4})-(\d{2})-(\d{2})/, '$1년 $2월 $3일').replace(/0(\d)월/, '$1월').replace(/0(\d)일/, '$1일');
+
+  // ── 영어 ──
+  document.getElementById('en').innerHTML = `
+  <h1>${CONFIG.gameEn} — Privacy Policy</h1>
+  <p class="date">Effective: ${dateEn} | Last Updated: ${dateEn}</p>
+
+  <p>${CONFIG.companyEn} ("we", "us", or "our") values your privacy. This policy explains what information is collected and how it is used when you play <strong>${CONFIG.gameEn}</strong> ("the Game").</p>
+
+  <h2>1. Information We Collect</h2>
+  <p><strong>The Game does not require account creation, login, or payment. We do not collect any personally identifiable information.</strong></p>
+  <p>The following non-identifying data may be processed automatically depending on the platform:</p>
+  <ul>
+    <li><strong>Game settings</strong>: BGM/SFX mute preferences — stored locally on your device (localStorage) and never transmitted externally.</li>
+    <li><strong>Gameplay statistics</strong>: Scores and play events (start, end, revive, etc.) — transmitted to platform services as described below.</li>
+    <li><strong>Leaderboard scores</strong>: Your score may be submitted to a leaderboard service at the end of each game.</li>
+  </ul>
+
+  <h2>2. Third-Party Services</h2>
+  <p>Depending on the platform, the Game uses the following third-party services:</p>
+  <ul>
+    <li><strong>Google Play Games Services</strong> (Android app): Leaderboard and sign-in. Subject to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</li>
+    <li><strong>Google AdMob</strong> (Android app): Rewarded video ads. AdMob may collect device identifiers and ad interaction data. Subject to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</li>
+    <li><strong>Toss (Viva Republica)</strong> (Toss in-app): Leaderboard, analytics, and ads. Subject to <a href="https://toss.im/privacy-policy" target="_blank">Toss Privacy Policy</a>.</li>
+  </ul>
+
+  <h2>3. Purpose of Data Use</h2>
+  <ul>
+    <li>Saving game settings (mute state)</li>
+    <li>Providing leaderboard rankings</li>
+    <li>Displaying ads (rewarded video for revive feature)</li>
+    <li>Analyzing gameplay statistics for service improvement</li>
+  </ul>
+
+  <h2>4. Data Retention</h2>
+  <ul>
+    <li><strong>Game settings (localStorage)</strong>: Retained on your device until you clear browser data or uninstall the app.</li>
+    <li><strong>Third-party data</strong>: Retained according to each service's respective privacy policy.</li>
+  </ul>
+
+  <h2>5. Data Sharing</h2>
+  <p>We do not sell or share your personal information with third parties. Data is only transmitted to the platform services listed in Section 2, solely for the purposes described in this policy.</p>
+
+  <h2>6. Children's Privacy</h2>
+  <p>The Game is rated for all ages (IARC 3+). We do not knowingly collect personal information from children under 13 (or the applicable age in your jurisdiction). If we learn that such information has been provided, we will delete it immediately.</p>
+
+  <h2>7. Your Rights</h2>
+  <ul>
+    <li>Delete game settings: Clear site data in your browser or uninstall the app.</li>
+    <li>Opt out of personalized ads: Adjust your device's ad settings.</li>
+    <li>Contact us with any privacy concerns at the email below.</li>
+  </ul>
+
+  <h2>8. Contact Us</h2>
+  <div class="contact">
+    <p><strong>Developer</strong>: ${CONFIG.companyEn}</p>
+    <p><strong>Email</strong>: ${CONFIG.email}</p>
+  </div>
+
+  <h2>9. Changes to This Policy</h2>
+  <p>We may update this policy as needed. Changes will be posted on this page with an updated effective date.</p>
+  `;
+
+  // ── 한국어 ──
+  document.getElementById('ko').innerHTML = `
+  <h1>${CONFIG.gameKo} — 개인정보 처리방침</h1>
+  <p class="date">시행일: ${dateKo} | 최종 수정일: ${dateKo}</p>
+
+  <p>${CONFIG.companyKo}(이하 "회사")은 「${CONFIG.gameKo}」(이하 "게임") 이용자의 개인정보를 중요하게 여기며, 개인정보 보호법 및 관련 법령을 준수합니다. 본 방침은 게임에서 어떤 정보를 수집·이용·보관하는지 안내합니다.</p>
 
   <h2>1. 수집하는 개인정보 항목</h2>
   <p><strong>본 게임은 회원가입, 로그인, 결제 기능이 없으며, 이용자를 직접 식별할 수 있는 개인정보를 수집하지 않습니다.</strong></p>
-
-  <p>다만, 다음과 같은 비식별 정보가 자동으로 처리될 수 있습니다:</p>
+  <p>다만, 플랫폼에 따라 다음과 같은 비식별 정보가 자동으로 처리될 수 있습니다:</p>
   <ul>
     <li><strong>게임 설정 정보</strong>: 배경음악·효과음 음소거 여부 (기기 내 localStorage에만 저장, 외부 전송 없음)</li>
-    <li><strong>게임 플레이 통계</strong>: 게임 점수, 플레이 이벤트 (게임 시작·종료·부활 등) — 토스 인앱 환경에서만 토스 서버로 전송</li>
-    <li><strong>리더보드 점수</strong>: 게임 종료 시 점수가 토스 Game Center 리더보드에 제출될 수 있음 — 토스 인앱 환경에서만 해당</li>
+    <li><strong>게임 플레이 통계</strong>: 게임 점수, 플레이 이벤트 (게임 시작·종료·부활 등) — 플랫폼 서비스로 전송</li>
+    <li><strong>리더보드 점수</strong>: 게임 종료 시 점수가 리더보드에 제출될 수 있음</li>
   </ul>
 
-  <h2>2. 개인정보의 수집·이용 목적</h2>
+  <h2>2. 제3자 서비스</h2>
+  <p>플랫폼에 따라 다음 제3자 서비스를 사용합니다:</p>
+  <ul>
+    <li><strong>Google Play Games Services</strong> (Android 앱): 리더보드 및 로그인. <a href="https://policies.google.com/privacy" target="_blank">Google 개인정보처리방침</a> 적용.</li>
+    <li><strong>Google AdMob</strong> (Android 앱): 리워드 광고. 기기 식별자 및 광고 상호작용 데이터가 수집될 수 있음. <a href="https://policies.google.com/privacy" target="_blank">Google 개인정보처리방침</a> 적용.</li>
+    <li><strong>토스 (비바리퍼블리카)</strong> (토스 인앱): 리더보드, 분석, 광고. <a href="https://toss.im/privacy-policy" target="_blank">토스 개인정보처리방침</a> 적용.</li>
+  </ul>
+
+  <h2>3. 개인정보의 수집·이용 목적</h2>
   <ul>
     <li>게임 설정 저장 (음소거 상태 유지)</li>
-    <li>게임 플레이 통계 분석 및 서비스 개선 (토스 인앱 환경 한정)</li>
-    <li>리더보드 순위 제공 (토스 인앱 환경 한정)</li>
+    <li>리더보드 순위 제공</li>
+    <li>광고 표시 (부활 기능용 리워드 광고)</li>
+    <li>게임 플레이 통계 분석 및 서비스 개선</li>
   </ul>
 
-  <h2>3. 개인정보의 보유 및 이용 기간</h2>
+  <h2>4. 개인정보의 보유 및 이용 기간</h2>
   <ul>
     <li><strong>게임 설정 (localStorage)</strong>: 이용자가 브라우저 데이터를 삭제하거나 앱을 제거할 때까지 기기 내에 보관</li>
-    <li><strong>토스 플레이 통계·리더보드</strong>: 토스의 개인정보 처리방침에 따름</li>
+    <li><strong>제3자 서비스 데이터</strong>: 각 서비스의 개인정보 처리방침에 따름</li>
   </ul>
 
-  <h2>4. 개인정보의 제3자 제공</h2>
-  <p>본 게임은 이용자의 개인정보를 제3자에게 제공하지 않습니다.</p>
-  <p>단, 토스 인앱 환경에서 실행 시 게임 점수 및 플레이 통계가 (주)비바리퍼블리카(토스)에 전송될 수 있으며, 이는 토스 플랫폼의 개인정보 처리방침에 따릅니다.</p>
+  <h2>5. 개인정보의 제3자 제공</h2>
+  <p>본 게임은 이용자의 개인정보를 판매하거나 제3자에게 제공하지 않습니다. 데이터는 본 방침에 기술된 목적으로만 위 제2항의 플랫폼 서비스에 전송됩니다.</p>
 
-  <h2>5. 개인정보의 파기</h2>
-  <ul>
-    <li>localStorage 데이터: 브라우저 설정에서 사이트 데이터 삭제 시 즉시 파기</li>
-    <li>토스 관련 데이터: 토스 앱 삭제 또는 토스 고객센터를 통해 삭제 요청 가능</li>
-  </ul>
+  <h2>6. 아동의 개인정보 보호</h2>
+  <p>본 게임은 전체이용가(IARC 3+) 등급입니다. 만 14세 미만 아동의 개인정보를 의도적으로 수집하지 않으며, 해당 정보가 수집된 사실을 알게 된 경우 즉시 삭제합니다.</p>
 
-  <h2>6. 이용자의 권리</h2>
-  <p>이용자는 언제든지 다음과 같은 권리를 행사할 수 있습니다:</p>
+  <h2>7. 이용자의 권리</h2>
   <ul>
-    <li>게임 설정 데이터 삭제: 브라우저에서 사이트 데이터 삭제</li>
-    <li>게임 이용 중단: 앱 삭제 또는 웹사이트 방문 중단</li>
+    <li>게임 설정 데이터 삭제: 브라우저에서 사이트 데이터 삭제 또는 앱 삭제</li>
+    <li>맞춤 광고 거부: 기기의 광고 설정에서 조정</li>
     <li>개인정보 관련 문의: 아래 연락처로 문의</li>
   </ul>
 
-  <h2>7. 자동 수집 장치의 설치·운영 및 거부</h2>
+  <h2>8. 자동 수집 장치의 설치·운영 및 거부</h2>
   <p>본 게임은 쿠키(Cookie)를 사용하지 않습니다. localStorage를 사용하여 음소거 설정만 저장하며, 이는 이용자의 기기에서만 처리됩니다.</p>
-
-  <h2>8. 아동의 개인정보 보호</h2>
-  <p>본 게임은 만 14세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다. 만 14세 미만 아동이 개인정보를 제공한 사실을 알게 된 경우 즉시 해당 정보를 삭제합니다.</p>
 
   <h2>9. 개인정보 보호책임자</h2>
   <div class="contact">
-    <p><strong>사업자명</strong>: DragonNine Studio</p>
-    <p><strong>이메일</strong>: contact@dragonnine.studio</p>
+    <p><strong>사업자명</strong>: ${CONFIG.companyKo}</p>
+    <p><strong>이메일</strong>: ${CONFIG.email}</p>
   </div>
   <p>개인정보 처리에 관한 문의, 불만, 피해구제는 위 이메일로 연락해 주시기 바랍니다.</p>
 
   <h2>10. 개인정보 처리방침의 변경</h2>
-  <p>본 방침은 관련 법령 또는 서비스 변경에 따라 수정될 수 있으며, 변경 시 게임 내 또는 본 페이지를 통해 공지합니다.</p>
+  <p>본 방침은 관련 법령 또는 서비스 변경에 따라 수정될 수 있으며, 변경 시 본 페이지를 통해 공지합니다.</p>
+  `;
+
+  // ── 언어 전환 ──
+  function switchLang(lang) {
+    document.getElementById('en').classList.toggle('visible', lang === 'en');
+    document.getElementById('ko').classList.toggle('visible', lang === 'ko');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-ko').classList.toggle('active', lang === 'ko');
+    document.documentElement.lang = lang;
+  }
+
+  // 브라우저 언어 감지 → 자동 선택
+  const userLang = (navigator.language || '').toLowerCase();
+  switchLang(userLang.startsWith('ko') ? 'ko' : 'en');
+</script>
+
 </body>
 </html>
