@@ -216,8 +216,10 @@
   }
 
   // 브라우저 언어 감지 → 자동 선택
+  // URL 파라미터 우선, 없으면 브라우저 언어 감지
+  const urlLang = new URLSearchParams(window.location.search).get('lang');
   const userLang = (navigator.language || '').toLowerCase();
-  switchLang(userLang.startsWith('ko') ? 'ko' : 'en');
+  switchLang(urlLang === 'en' ? 'en' : urlLang === 'ko' ? 'ko' : userLang.startsWith('ko') ? 'ko' : 'en');
 </script>
 
 </body>
