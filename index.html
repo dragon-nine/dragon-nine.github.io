@@ -107,7 +107,10 @@
       font-size: 12px; font-weight: 600; padding: 4px 10px;
       border-radius: 6px; text-decoration: none;
     }
-    a.game-tag:hover { background: #e94560; color: #fff; }
+    a.game-tag {
+      color: #888; border: 1px solid #333; background: transparent; cursor: pointer;
+    }
+    a.game-tag:hover { background: #e94560; color: #fff; border-color: #e94560; }
 
     /* Contact */
     .links { display: flex; flex-direction: column; gap: 10px; }
