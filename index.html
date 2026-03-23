@@ -15,10 +15,10 @@
 
     /* Lang switch */
     .lang-switch {
-      text-align: right;
-      padding: 16px 20px 0;
-      max-width: 700px;
-      margin: 0 auto;
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      z-index: 10;
     }
     .lang-switch button {
       background: none; border: 1px solid #333; border-radius: 6px;
@@ -31,6 +31,7 @@
 
     /* Hero */
     .hero {
+      position: relative;
       text-align: center;
       padding: 60px 20px 50px;
       background: linear-gradient(to bottom, #12121f, #0a0a14);
@@ -142,14 +143,13 @@
 </head>
 <body>
 
-<div class="lang-switch">
-  <button id="btn-ko" onclick="switchLang('ko')">한국어</button>
-  <button id="btn-en" onclick="switchLang('en')">English</button>
-</div>
-
 <!-- ===== 한국어 ===== -->
 <div id="ko" class="lang-content">
   <div class="hero">
+    <div class="lang-switch">
+      <button id="btn-ko" onclick="switchLang('ko')">한국어</button>
+      <button id="btn-en" onclick="switchLang('en')">English</button>
+    </div>
     <h1>드래곤나인</h1>
     <div class="sub">Dragon Nine</div>
     <p>재미있고 중독성 있는 모바일 게임을 만듭니다.</p>
@@ -205,6 +205,10 @@
 <!-- ===== English ===== -->
 <div id="en" class="lang-content" style="display:none">
   <div class="hero">
+    <div class="lang-switch">
+      <button id="btn-ko2" onclick="switchLang('ko')">한국어</button>
+      <button id="btn-en2" onclick="switchLang('en')">English</button>
+    </div>
     <h1>Dragon Nine</h1>
     <div class="sub">드래곤나인</div>
     <p>We create fun and addictive mobile games.</p>
@@ -263,6 +267,8 @@
     document.getElementById('en').style.display = lang === 'en' ? '' : 'none';
     document.getElementById('btn-ko').classList.toggle('active', lang === 'ko');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-ko2').classList.toggle('active', lang === 'ko');
+    document.getElementById('btn-en2').classList.toggle('active', lang === 'en');
     document.documentElement.lang = lang;
   }
   const userLang = (navigator.language || '').toLowerCase();
