@@ -13,10 +13,26 @@
       min-height: 100vh;
     }
 
+    /* Lang switch */
+    .lang-switch {
+      text-align: right;
+      padding: 16px 20px 0;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .lang-switch button {
+      background: none; border: 1px solid #333; border-radius: 6px;
+      padding: 6px 14px; cursor: pointer; font-size: 13px; color: #666;
+      margin-left: 4px; transition: all 0.2s;
+    }
+    .lang-switch button.active {
+      background: #e94560; color: #fff; border-color: #e94560;
+    }
+
     /* Hero */
     .hero {
       text-align: center;
-      padding: 80px 20px 50px;
+      padding: 60px 20px 50px;
       background: linear-gradient(to bottom, #12121f, #0a0a14);
     }
     .hero h1 {
@@ -75,161 +91,88 @@
       align-items: center;
       transition: border-color 0.2s;
     }
-    .game-card:hover {
-      border-color: #e94560;
-    }
+    .game-card:hover { border-color: #e94560; }
     .game-icon {
-      width: 80px;
-      height: 80px;
-      border-radius: 18px;
-      flex-shrink: 0;
-      object-fit: cover;
+      width: 80px; height: 80px;
+      border-radius: 18px; flex-shrink: 0; object-fit: cover;
     }
-    .game-info {
-      flex: 1;
-    }
-    .game-info h3 {
-      font-size: 20px;
-      color: #fff;
-      margin-bottom: 2px;
-    }
-    .game-info .game-name-en {
-      font-size: 13px;
-      color: #666;
-      margin-bottom: 8px;
-    }
-    .game-info p {
-      font-size: 14px;
-      color: #888;
-      line-height: 1.6;
-    }
+    .game-info { flex: 1; }
+    .game-info h3 { font-size: 20px; color: #fff; margin-bottom: 2px; }
+    .game-info .game-name-sub { font-size: 13px; color: #666; margin-bottom: 8px; }
+    .game-info p { font-size: 14px; color: #888; line-height: 1.6; }
     .game-tag {
-      display: inline-block;
-      background: #1a1a2e;
-      color: #e94560;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 6px;
-      margin-top: 10px;
+      display: inline-block; background: #1a1a2e; color: #e94560;
+      font-size: 12px; font-weight: 600; padding: 4px 10px;
+      border-radius: 6px; margin-top: 10px;
     }
 
     /* Privacy */
-    .privacy-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+    .privacy-list { display: flex; flex-direction: column; gap: 10px; }
     .privacy-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      background: #12121f;
-      border: 1px solid #1e1e30;
-      border-radius: 10px;
-      padding: 14px 20px;
-      color: #e0e0e8;
-      text-decoration: none;
-      font-size: 15px;
-      transition: border-color 0.2s;
+      display: flex; align-items: center; gap: 14px;
+      background: #12121f; border: 1px solid #1e1e30; border-radius: 10px;
+      padding: 14px 20px; color: #e0e0e8; text-decoration: none;
+      font-size: 15px; transition: border-color 0.2s;
     }
-    .privacy-item:hover {
-      border-color: #e94560;
-      color: #fff;
-    }
+    .privacy-item:hover { border-color: #e94560; color: #fff; }
     .privacy-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      flex-shrink: 0;
-      object-fit: cover;
+      width: 36px; height: 36px; border-radius: 8px;
+      flex-shrink: 0; object-fit: cover;
     }
-    .privacy-item span {
-      color: #666;
-      font-size: 13px;
-      margin-left: auto;
-    }
+    .privacy-item span { color: #666; font-size: 13px; margin-left: auto; }
 
     /* Contact */
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+    .links { display: flex; flex-direction: column; gap: 10px; }
     .links a {
-      display: block;
-      background: #12121f;
-      border: 1px solid #1e1e30;
-      border-radius: 10px;
-      padding: 14px 20px;
-      color: #e0e0e8;
-      text-decoration: none;
-      font-size: 15px;
-      transition: border-color 0.2s;
+      display: block; background: #12121f; border: 1px solid #1e1e30;
+      border-radius: 10px; padding: 14px 20px; color: #e0e0e8;
+      text-decoration: none; font-size: 15px; transition: border-color 0.2s;
     }
-    .links a:hover {
-      border-color: #e94560;
-      color: #fff;
-    }
-    .links a span {
-      color: #666;
-      font-size: 13px;
-      float: right;
-    }
+    .links a:hover { border-color: #e94560; color: #fff; }
+    .links a span { color: #666; font-size: 13px; float: right; }
 
     /* Footer */
     footer {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 40px 20px 60px;
-      border-top: 1px solid #1a1a2e;
-      font-size: 13px;
-      color: #555;
-      line-height: 2;
+      max-width: 700px; margin: 0 auto; padding: 40px 20px 60px;
+      border-top: 1px solid #1a1a2e; font-size: 13px; color: #555; line-height: 2;
     }
-    footer strong {
-      color: #888;
-    }
-    footer a {
-      color: #e94560;
-      text-decoration: none;
-    }
+    footer strong { color: #888; }
+    footer a { color: #e94560; text-decoration: none; }
   </style>
 </head>
 <body>
 
-  <!-- Hero -->
+<div class="lang-switch">
+  <button id="btn-ko" onclick="switchLang('ko')">한국어</button>
+  <button id="btn-en" onclick="switchLang('en')">English</button>
+</div>
+
+<!-- ===== 한국어 ===== -->
+<div id="ko" class="lang-content">
   <div class="hero">
     <h1>드래곤나인</h1>
     <div class="sub">Dragon Nine</div>
     <p>재미있고 중독성 있는 모바일 게임을 만듭니다.</p>
   </div>
 
-  <!-- About -->
   <div class="section about">
-    <h2>About Us</h2>
-    <p>
-      드래곤나인은 모바일 게임 개발 스튜디오입니다.
-      누구나 쉽게 즐길 수 있는 캐주얼 게임을 만들고, Google Play와 토스 등 다양한 플랫폼에 서비스합니다.
-      작지만 빠르게, 재미를 최우선으로 게임을 만들어갑니다.
-    </p>
+    <h2>회사 소개</h2>
+    <p>드래곤나인은 모바일 게임 개발 스튜디오입니다. 누구나 쉽게 즐길 수 있는 캐주얼 게임을 만들고, Google Play와 토스 등 다양한 플랫폼에 서비스합니다. 작지만 빠르게, 재미를 최우선으로 게임을 만들어갑니다.</p>
   </div>
 
-  <!-- Games -->
   <div class="section">
-    <h2>Our Games</h2>
+    <h2>게임</h2>
     <div class="game-card">
       <img src="/images/game01-icon.png" alt="직장인 잔혹사" class="game-icon">
       <div class="game-info">
         <h3>직장인 잔혹사 : 퇴근길</h3>
-        <div class="game-name-en">Workers' Nightmare: Way Home</div>
+        <div class="game-name-sub">Workers' Nightmare: Way Home</div>
         <p>퇴근길은 만만치 않다! 2레인 도로를 달리며 장애물을 피하는 캐주얼 러너 게임.</p>
         <span class="game-tag">Google Play 출시 예정</span>
       </div>
     </div>
   </div>
 
-  <!-- Privacy -->
   <div class="section">
     <h2>개인정보 처리방침</h2>
     <div class="privacy-list">
@@ -241,18 +184,13 @@
     </div>
   </div>
 
-  <!-- Contact -->
   <div class="section">
-    <h2>Contact</h2>
+    <h2>문의</h2>
     <div class="links">
-      <a href="mailto:dragonnine109@gmail.com">
-        문의하기
-        <span>dragonnine109@gmail.com</span>
-      </a>
+      <a href="mailto:dragonnine109@gmail.com">이메일 문의 <span>dragonnine109@gmail.com</span></a>
     </div>
   </div>
 
-  <!-- Footer -->
   <footer>
     <strong>드래곤나인 (Dragon Nine)</strong><br>
     대표: 한용구<br>
@@ -262,6 +200,74 @@
     전화: +82-10-5422-6388<br><br>
     &copy; 2026 Dragon Nine. All rights reserved.
   </footer>
+</div>
+
+<!-- ===== English ===== -->
+<div id="en" class="lang-content" style="display:none">
+  <div class="hero">
+    <h1>Dragon Nine</h1>
+    <div class="sub">드래곤나인</div>
+    <p>We create fun and addictive mobile games.</p>
+  </div>
+
+  <div class="section about">
+    <h2>About Us</h2>
+    <p>Dragon Nine is a mobile game development studio based in South Korea. We build casual games that anyone can enjoy, available on Google Play, Toss, and other platforms. Small team, fast moves, fun first.</p>
+  </div>
+
+  <div class="section">
+    <h2>Games</h2>
+    <div class="game-card">
+      <img src="/images/game01-icon.png" alt="Workers' Nightmare" class="game-icon">
+      <div class="game-info">
+        <h3>Workers' Nightmare: Way Home</h3>
+        <div class="game-name-sub">직장인 잔혹사 : 퇴근길</div>
+        <p>The commute home is no joke! A casual runner game where you dodge obstacles across two lanes.</p>
+        <span class="game-tag">Coming Soon on Google Play</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Privacy Policy</h2>
+    <div class="privacy-list">
+      <a href="/privacy/worker-nightmare.html" class="privacy-item">
+        <img src="/images/game01-icon.png" alt="" class="privacy-icon">
+        Workers' Nightmare: Way Home
+        <span>Privacy Policy</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Contact</h2>
+    <div class="links">
+      <a href="mailto:dragonnine109@gmail.com">Email Us <span>dragonnine109@gmail.com</span></a>
+    </div>
+  </div>
+
+  <footer>
+    <strong>DragonNine</strong><br>
+    CEO: Yonggu Han<br>
+    Business Registration No.: 801-01-03839<br>
+    Address: 3209-1006, 19 Dongtan-daero 2-gil, Dongtan-gu, Hwaseong-si, Gyeonggi-do, 18507, Republic of Korea<br>
+    Email: <a href="mailto:dragonnine109@gmail.com">dragonnine109@gmail.com</a><br>
+    Phone: +82-10-5422-6388<br><br>
+    &copy; 2026 Dragon Nine. All rights reserved.
+  </footer>
+</div>
+
+<script>
+  function switchLang(lang) {
+    document.getElementById('ko').style.display = lang === 'ko' ? '' : 'none';
+    document.getElementById('en').style.display = lang === 'en' ? '' : 'none';
+    document.getElementById('btn-ko').classList.toggle('active', lang === 'ko');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.documentElement.lang = lang;
+  }
+  const userLang = (navigator.language || '').toLowerCase();
+  switchLang(userLang.startsWith('ko') ? 'ko' : 'en');
+</script>
 
 </body>
 </html>
