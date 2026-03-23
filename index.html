@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dragon Nine — Game Studio</title>
+  <title>드래곤나인 — Dragon Nine</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -19,26 +19,19 @@
       padding: 80px 20px 50px;
       background: linear-gradient(to bottom, #12121f, #0a0a14);
     }
-    .hero-logo {
-      width: 80px;
-      height: 80px;
-      background: #e94560;
-      border-radius: 20px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 36px;
-      font-weight: 900;
-      color: #fff;
-      margin-bottom: 24px;
-      box-shadow: 0 8px 32px rgba(233, 69, 96, 0.3);
-    }
     .hero h1 {
       font-size: 42px;
       font-weight: 800;
       color: #fff;
       letter-spacing: -1px;
-      margin-bottom: 12px;
+      margin-bottom: 6px;
+    }
+    .hero .sub {
+      font-size: 16px;
+      color: #666;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
     }
     .hero p {
       font-size: 18px;
@@ -75,19 +68,37 @@
       background: #12121f;
       border: 1px solid #1e1e30;
       border-radius: 16px;
-      padding: 28px;
+      padding: 24px;
       margin-bottom: 16px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
       transition: border-color 0.2s;
     }
     .game-card:hover {
       border-color: #e94560;
     }
-    .game-card h3 {
+    .game-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 18px;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+    .game-info {
+      flex: 1;
+    }
+    .game-info h3 {
       font-size: 20px;
       color: #fff;
+      margin-bottom: 2px;
+    }
+    .game-info .game-name-en {
+      font-size: 13px;
+      color: #666;
       margin-bottom: 8px;
     }
-    .game-card p {
+    .game-info p {
       font-size: 14px;
       color: #888;
       line-height: 1.6;
@@ -100,10 +111,46 @@
       font-weight: 600;
       padding: 4px 10px;
       border-radius: 6px;
-      margin-top: 12px;
+      margin-top: 10px;
     }
 
-    /* Links */
+    /* Privacy */
+    .privacy-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .privacy-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #12121f;
+      border: 1px solid #1e1e30;
+      border-radius: 10px;
+      padding: 14px 20px;
+      color: #e0e0e8;
+      text-decoration: none;
+      font-size: 15px;
+      transition: border-color 0.2s;
+    }
+    .privacy-item:hover {
+      border-color: #e94560;
+      color: #fff;
+    }
+    .privacy-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+    .privacy-item span {
+      color: #666;
+      font-size: 13px;
+      margin-left: auto;
+    }
+
+    /* Contact */
     .links {
       display: flex;
       flex-direction: column;
@@ -153,8 +200,8 @@
 
   <!-- Hero -->
   <div class="hero">
-    <div class="hero-logo">D9</div>
-    <h1>Dragon Nine</h1>
+    <h1>드래곤나인</h1>
+    <div class="sub">Dragon Nine</div>
     <p>재미있고 중독성 있는 모바일 게임을 만듭니다.</p>
   </div>
 
@@ -162,7 +209,7 @@
   <div class="section about">
     <h2>About Us</h2>
     <p>
-      드래곤나인(Dragon Nine)은 모바일 게임 개발 스튜디오입니다.
+      드래곤나인은 모바일 게임 개발 스튜디오입니다.
       누구나 쉽게 즐길 수 있는 캐주얼 게임을 만들고, Google Play와 토스 등 다양한 플랫폼에 서비스합니다.
       작지만 빠르게, 재미를 최우선으로 게임을 만들어갑니다.
     </p>
@@ -172,20 +219,32 @@
   <div class="section">
     <h2>Our Games</h2>
     <div class="game-card">
-      <h3>직장인 잔혹사</h3>
-      <p>퇴근길은 만만치 않다! 2레인 도로를 달리며 장애물을 피하는 캐주얼 러너 게임. 타이머가 다하기 전에 최대한 멀리 가세요.</p>
-      <span class="game-tag">Google Play 출시 예정</span>
+      <img src="/images/game01-icon.png" alt="직장인 잔혹사" class="game-icon">
+      <div class="game-info">
+        <h3>직장인 잔혹사 : 퇴근길</h3>
+        <div class="game-name-en">Workers' Nightmare: Way Home</div>
+        <p>퇴근길은 만만치 않다! 2레인 도로를 달리며 장애물을 피하는 캐주얼 러너 게임.</p>
+        <span class="game-tag">Google Play 출시 예정</span>
+      </div>
     </div>
   </div>
 
-  <!-- Links -->
+  <!-- Privacy -->
   <div class="section">
-    <h2>Links</h2>
-    <div class="links">
-      <a href="/privacy/worker-nightmare.html">
-        개인정보 처리방침 — 직장인 잔혹사
+    <h2>개인정보 처리방침</h2>
+    <div class="privacy-list">
+      <a href="/privacy/worker-nightmare.html" class="privacy-item">
+        <img src="/images/game01-icon.png" alt="" class="privacy-icon">
+        직장인 잔혹사 : 퇴근길
         <span>Privacy Policy</span>
       </a>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="section">
+    <h2>Contact</h2>
+    <div class="links">
       <a href="mailto:dragonnine109@gmail.com">
         문의하기
         <span>dragonnine109@gmail.com</span>
